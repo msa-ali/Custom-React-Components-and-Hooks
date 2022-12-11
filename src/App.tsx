@@ -1,10 +1,44 @@
+import Button from "./components/button";
+import { GoBell, GoDashboard } from 'react-icons/go'
+
 function App() {
 
   return (
-    <div className="min-h-screen flex justify-center items-center">
-      <h1 className="text-3xl font-bold text-blue-600">
-      Install & Setup Vite + React + Typescript + Tailwind CSS 3
-      </h1>
+    <div className="min-h-screen flex justify-center items-center flex-col">
+
+      <div className="mb-4 mt-4">
+        <Button appearance="primary" onDoubleClick={()=> console.log("Double clicked!!!")}>primary </Button>
+      </div>
+      <div className="mb-4">
+        <Button appearance="secondary" onClick={()=> console.log("clicked!!!")}>secondary</Button>
+      </div>
+      <div className="mb-4">
+        <Button appearance="success">
+          <GoBell />
+          success
+        </Button>
+      </div>
+      <div className="mb-4">
+        <Button appearance="warning">warning</Button>
+      </div>
+      <div className="mb-4">
+        <Button appearance="danger">danger</Button>
+      </div>
+      <div className="mb-4">
+        <Button appearance="primary" outline>primary outline</Button>
+      </div>
+      <div className="mb-4">
+        <Button appearance="primary" rounded>primary rounded</Button>
+      </div>
+      <div className="mb-4">
+        <Button appearance="success" outline rounded>
+          <GoDashboard />
+          success outline
+        </Button>
+      </div>
+      <div className="mb-4">
+        <Button appearance="success" rounded >success rounded</Button>
+      </div>
     </div>
   );
 }
