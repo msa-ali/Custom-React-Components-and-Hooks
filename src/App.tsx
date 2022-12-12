@@ -23,10 +23,12 @@ function App() {
 
 
   return (
-    <>
+    <div className="flex flex-col justify-center items-center">
       <ButtonPage />
+      <div className=" w-3/5 mb-8">
       <Accordion items={items} />
-    </>
+      </div>
+    </div>
   );
 }
 
