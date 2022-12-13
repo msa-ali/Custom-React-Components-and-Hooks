@@ -4,7 +4,7 @@ import Button from "../components/Button";
 
 function ButtonPage() {
     return (
-        <div className="min-h-screen flex justify-center items-center flex-col">
+        <div className="flex justify-center items-center flex-col">
 
             <div className="mb-4 mt-4">
                 <Button appearance="primary" onDoubleClick={() => console.log("Double clicked!!!")}>primary </Button>
