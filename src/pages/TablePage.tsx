@@ -1,5 +1,4 @@
-import Table, { Config } from '../components/Table';
-
+import SortableTable, {Config} from '../components/SortableTable';
 type Data = {
     name: string;
     color: string;
@@ -14,19 +13,28 @@ const data: Data[] = [
 ];
 
 const config: Config<Data> = [
-    { label: 'Name', render: d => d.name },
+    { 
+        label: 'Name', 
+        render: d => d.name, 
+        sortValue: d => d.name, 
+    },
     {
-        label: 'Color', render: d => {
+        label: 'Color', 
+        render: d => {
             const coloredCell = `p-3 m-2 ${d.color}`
             return <div className={coloredCell}></div>;
         },
     },
-    { label: 'Score', render: d => d.score }
+    { 
+        label: 'Score', 
+        render: d => d.score, 
+        sortValue: d => d.score 
+    }
 ];
 
 function TablePage() {
     return (
-        <div><Table data={data} config={config} keyFn={data => data.name} /></div>
+        <div><SortableTable data={data} config={config} keyFn={data => data.name} /></div>
     )
 }
 
