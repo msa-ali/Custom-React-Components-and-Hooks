@@ -1,7 +1,7 @@
-import { useState } from "react";
 import { GoArrowSmallDown, GoArrowSmallUp } from 'react-icons/go';
 
-import Table, { Props as TableProps, Config as TableConfig } from "../Table";
+import Table, { Props as TableProps } from "../Table";
+import useSort from "../../hooks/use-sort";
 
 export type Config<T> = Array<{
     label: string;
@@ -39,30 +39,8 @@ function getIcons(label: string, sortBy: string | null, sortOrder: 'asc' | 'desc
 
 
 const SortableTable = <T,>(props: Props<T>) => {
-    const [sortOrder, setSortOrder] = useState<'asc' | 'desc' | null>(null);
-    const [sortBy, setSortBy] = useState<string | null>(null);
-
     const { config, data } = props;
-
-    const handleClick = (label: string) => {
-        
-        if (sortBy && label !== sortBy) {
-            setSortOrder('asc');
-            setSortBy(label);
-            return;
-        }
-
-        if (sortOrder === null) {
-            setSortOrder('asc');
-            setSortBy(label);
-        } else if (sortOrder === 'asc') {
-            setSortOrder('desc');
-            setSortBy(label);
-        } else if (sortOrder === 'desc') {
-            setSortOrder(null);
-            setSortBy(null);
-        }
-    }
+    const { handleClick, sortBy, sortOrder, sortedData } = useSort(data, config);
 
     const updatedConfig = config.map((column) => {
         if (!column.sortValue) {
@@ -80,28 +58,7 @@ const SortableTable = <T,>(props: Props<T>) => {
         }
     });
 
-    // only sort data if sortOrder and sortBy is not null
-    // Make a copy of data prop
-    // find the correct sortValue fn and use it for sorting
-    let sortedData = data;
-    if (sortOrder && sortBy) {
-        const sortValue = config.find(column => column.label === sortBy)?.sortValue;
-        if (sortValue) {
-            sortedData = [...data].sort((a, b) => {
-                const valueA = sortValue(a);
-                const valueB = sortValue(b);
 
-                const order = sortOrder === 'asc' ? 1 : -1;
-
-                if (typeof valueA === 'string') {
-                    return valueA.localeCompare(valueB) * order;
-                } else {
-                    return (valueA - valueB) * order;
-                }
-
-            })
-        }
-    }
 
     return (
         <Table {...props} data={sortedData} config={updatedConfig} />
