@@ -6,6 +6,9 @@ import DropdownPage from "./pages/DropdownPage";
 import ModalPage from "./pages/ModalPage";
 import TablePage from './pages/TablePage';
 import CounterPage from './pages/CounterPage';
+import DragAndDrop from './components/DragAndDrop';
+import DragTargetTest from './components/DragAndDrop/hooks/test';
+import JiraIssueProvider from './components/DragAndDrop/jira-board/context';
 function App() {
   return (
     <div className="container mx-auto grid grid-cols-6 gap-4 mt-4">
@@ -28,6 +31,11 @@ function App() {
         </Route>
         <Route path='/counter'>
           <CounterPage initialCount={0} />
+        </Route>
+        <Route path='/drag-and-drop'>
+          <JiraIssueProvider>
+            <DragTargetTest />
+          </JiraIssueProvider>
         </Route>
       </div>
     </div>
