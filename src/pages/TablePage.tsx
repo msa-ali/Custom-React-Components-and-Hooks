@@ -1,4 +1,4 @@
-import SortableTable, {Config} from '../components/SortableTable';
+import SortableTable, {Config} from '../components/sortable-table';
 type Data = {
     name: string;
     color: string;

@@ -1,6 +1,6 @@
 import { GoArrowSmallDown, GoArrowSmallUp } from 'react-icons/go';
 
-import Table, { Props as TableProps } from "../Table";
+import Table, { Props as TableProps } from "../table";
 import useSort from "../../hooks/use-sort";
 
 export type Config<T> = Array<{

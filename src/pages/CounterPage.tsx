@@ -1,4 +1,4 @@
-import Button from '../components/Button';
+import Button from '../components/button';
 import useCounter from '../hooks/use-counter';
 
 function CounterPage({ initialCount }: { initialCount: number }) {

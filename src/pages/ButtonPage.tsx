@@ -1,6 +1,6 @@
 import { GoBell, GoDashboard } from 'react-icons/go';
 
-import Button from "../components/Button";
+import Button from "../components/button";
 
 function ButtonPage() {
     return (

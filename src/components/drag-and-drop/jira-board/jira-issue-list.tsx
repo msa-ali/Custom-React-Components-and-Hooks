@@ -2,7 +2,7 @@ import { useContext, useMemo, useRef } from "react";
 import { JiraIssue, JiraIssueStatus } from "./type";
 import JiraCard from "./jira-card";
 import tw from "tailwind-styled-components";
-import useDropTarget, { DropTargetEventHandlers } from "../../../hooks/useDropTarget";
+import useDropTarget, { DropTargetEventHandlers } from "../../../hooks/use-drop-target";
 import { JiraIssueUpdaterContext } from "./context";
 
 export type Props = {

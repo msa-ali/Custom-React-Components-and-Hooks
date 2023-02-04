@@ -3,7 +3,7 @@ import { useContext, useMemo } from "react";
 import { JiraIssueContext } from "./context";
 import groupBy from "lodash.groupby";
 import { JiraIssue, JiraIssueStatus, JiraIssueStatusList } from "./type";
-import JiraIssueList from "./JiraIssueList";
+import JiraIssueList from "./jira-issue-list";
 
 
 const JiraBoard = () => {

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Config } from "../components/SortableTable";
+import { Config } from "../components/sortable-table";
 
 export type SortingOrder = 'asc' | 'desc' | null;
 

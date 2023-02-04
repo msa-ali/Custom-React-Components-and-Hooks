@@ -1,9 +1,9 @@
 import tw from "tailwind-styled-components";
 import { JiraIssue } from "./type";
-import useDraggableTarget, { DraggableTargetEventHandlers } from "../../../hooks/useDraggableTarget";
+import useDraggableTarget, { DraggableTargetEventHandlers } from "../../../hooks/use-draggable-target";
 import { memo, useMemo, useRef } from "react";
 
-export type Props = JiraIssue & {};
+export type Props = JiraIssue;
 
 const Avatar = tw.div`
     p-3
@@ -33,11 +33,11 @@ const TagStyledComponent = tw.span`
     uppercase
 `;
 
-interface JiraCardContainer {
+interface JiraCardContainerProps {
     $dragging: boolean;
 }
 
-const JiraCardContainer = tw.div<JiraCardContainer>`
+const JiraCardContainer = tw.div<JiraCardContainerProps>`
     max-w-sm
     p-2
     rounded

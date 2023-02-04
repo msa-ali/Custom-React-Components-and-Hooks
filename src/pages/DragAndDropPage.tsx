@@ -1,6 +1,6 @@
 import tw from "tailwind-styled-components";
-import JiraBoard from "../components/DragAndDrop/jira-board";
-import JiraIssueProvider from "../components/DragAndDrop/jira-board/context";
+import JiraBoard from "../components/drag-and-drop/jira-board";
+import JiraIssueProvider from "../components/drag-and-drop/jira-board/context";
 
 const Container = tw.div`
     flex

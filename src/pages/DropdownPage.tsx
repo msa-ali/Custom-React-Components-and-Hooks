@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Dropdown, { DropdownItem } from "../components/Dropdown";
+import Dropdown, { DropdownItem } from "../components/dropdown";
 
 
 function DropdownPage() {
