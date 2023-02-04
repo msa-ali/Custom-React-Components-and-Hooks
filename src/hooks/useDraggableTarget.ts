@@ -8,7 +8,7 @@ export type DraggableTargetEventHandlers = {
 
 
 const useDraggableTarget = (
-    ref: React.RefObject<HTMLDivElement>,
+    ref: React.RefObject<HTMLElement>,
     { drag, dragstart, dragend }: DraggableTargetEventHandlers = {},
 ) => {
     const [isDragging, setIsDragging] = useState(false);

@@ -8,7 +8,7 @@ export type DropTargetEventHandlers = {
 };
 
 const useDropTarget = (
-    ref: React.RefObject<HTMLDivElement>,
+    ref: React.RefObject<HTMLElement>,
     { dragover, dragenter, dragleave, drop }: DropTargetEventHandlers = {},
 ) => {
 
@@ -34,7 +34,6 @@ const useDropTarget = (
 
             // dragleave event
             const handleDragLeave = (event: DragEvent) => {
-                console.log("Drag leave...");
                 setIsDragOver(false);
                 dragleave?.(event);
             }
@@ -42,7 +41,6 @@ const useDropTarget = (
 
             // drop event
             const handleDrop = (event: DragEvent) => {
-                console.log("Dropped...");
                 setIsDragOver(false);
                 drop?.(event);
             }

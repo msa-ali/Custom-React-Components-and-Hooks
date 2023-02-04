@@ -1,4 +1,4 @@
-import { memo, useContext, useMemo, useRef } from "react";
+import { useContext, useMemo, useRef } from "react";
 import { JiraIssue, JiraIssueStatus } from "./type";
 import JiraCard from "./jira-card";
 import tw from "tailwind-styled-components";
@@ -30,8 +30,8 @@ const JiraIssueList = ({ status, issues }: Props) => {
     const ref = useRef<HTMLDivElement>(null);
 
     const updateJiraIssueStatus = useContext(JiraIssueUpdaterContext);
-
-    const numberOfIssues = `${issues?.length ?? 0} ${issues?.length ?? 0 > 0 ? "issues" : "issue"}`;
+    
+    const numberOfIssues = `${issues?.length ?? 0} ${(issues?.length ?? 0) > 1 ? "issues" : "issue"}`;
 
     const dropConfig: DropTargetEventHandlers = useMemo(() => ({
         drop(event) {
@@ -67,4 +67,4 @@ const JiraIssueList = ({ status, issues }: Props) => {
     );
 };
 
-export default memo(JiraIssueList);
+export default JiraIssueList;
