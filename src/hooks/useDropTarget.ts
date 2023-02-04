@@ -21,15 +21,13 @@ const useDropTarget = (
             // dragover event
             const handleDragOver = (event: DragEvent) => {
                 event.preventDefault();
-                console.log("Dragging over...");
+                setIsDragOver(true);
                 dragover?.(event);
             }
             ref.current.addEventListener('dragover', handleDragOver);
 
             // dragenter event
             const handleDragEnter = (event: DragEvent) => {
-                console.log("Drag entered...");
-                setIsDragOver(true);
                 dragenter?.(event);
             }
             ref.current.addEventListener('dragenter', handleDragEnter);

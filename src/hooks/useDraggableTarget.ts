@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-type DraggableTargetEventHandlers = {
+export type DraggableTargetEventHandlers = {
     drag?: (event: DragEvent) => void;
     dragstart?: (event: DragEvent) => void;
     dragend?: (event: DragEvent) => void;

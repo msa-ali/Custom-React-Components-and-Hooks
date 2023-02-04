@@ -1,5 +1,7 @@
 import tw from "tailwind-styled-components";
 import { JiraIssue } from "./type";
+import useDraggableTarget, { DraggableTargetEventHandlers } from "../../../hooks/useDraggableTarget";
+import { memo, useMemo, useRef } from "react";
 
 export type Props = JiraIssue & {};
 
@@ -31,11 +33,36 @@ const TagStyledComponent = tw.span`
     uppercase
 `;
 
+interface JiraCardContainer {
+    $dragging: boolean;
+}
 
+const JiraCardContainer = tw.div<JiraCardContainer>`
+    max-w-sm
+    p-2
+    rounded
+    overflow-hidden
+    shadow-xl
+     bg-white
+     ${props => props.$dragging ? "opacity-30" : "opacity-100"}
+`;
 
 const JiraCard = ({ title, tags, id, user }: Props) => {
+    const ref = useRef<HTMLDivElement>(null);
+
+    const dragConfig: DraggableTargetEventHandlers = useMemo(() => ({
+        dragstart: ev => {
+            if (ref.current && ev.dataTransfer) {
+                ev.dataTransfer.effectAllowed = "move";
+                ev.dataTransfer.setData("jiraIssueId", id);
+            }
+        }
+    }), [ref.current, id]);
+
+    const dragging = useDraggableTarget(ref, dragConfig);
+
     return (
-        <div key={id} className="max-w-sm p-2 rounded overflow-hidden shadow-xl bg-white">
+        <JiraCardContainer key={id} ref={ref} $dragging={dragging}>
             <div className="p-4 flex flex-col justify-around items-start gap-4">
                 <div className=" text-lg">{title}</div>
                 <div>
@@ -48,8 +75,8 @@ const JiraCard = ({ title, tags, id, user }: Props) => {
                     <Avatar>{user?.charAt(0) ?? "U"} </Avatar>
                 </div>
             </div>
-        </div>
+        </JiraCardContainer>
     );
 }
 
-export default JiraCard;
+export default memo(JiraCard);

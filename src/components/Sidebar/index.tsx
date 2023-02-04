@@ -7,7 +7,7 @@ const links: { label: string, path: string }[] = [
     { label: 'Modal', path: '/modal' },
     { label: 'Table', path: '/table' },
     { label: 'Counter', path: '/counter', },
-    { label: 'D&D', path: '/drag-and-drop', },
+    { label: 'Drag and Drop', path: '/drag-and-drop', },
 ];
 
 const Sidebar = () => {
