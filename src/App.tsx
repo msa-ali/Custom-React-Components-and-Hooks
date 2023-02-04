@@ -1,12 +1,12 @@
 import Route from './components/route';
 import Sidebar from "./components/sidebar";
-import AccordionPage from "./pages/AccordionPage";
-import ButtonPage from "./pages/ButtonPage";
-import DropdownPage from "./pages/DropdownPage";
-import ModalPage from "./pages/ModalPage";
-import TablePage from './pages/TablePage';
-import CounterPage from './pages/CounterPage';
-import DragAndDropPage from './pages/DragAndDropPage';
+import AccordionPage from "./pages/accordionPage";
+import ButtonPage from "./pages/buttonPage";
+import DropdownPage from "./pages/dropdownPage";
+import ModalPage from "./pages/modalPage";
+import TablePage from './pages/tablePage';
+import CounterPage from './pages/counterPage';
+import DragAndDropPage from './pages/dragAndDropPage';
 function App() {
   return (
     <div className="container mx-auto grid grid-cols-6 gap-4 mt-4">
