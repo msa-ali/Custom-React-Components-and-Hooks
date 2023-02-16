@@ -2,8 +2,9 @@ import { useContext, useMemo } from "react";
 
 import { JiraIssueContext } from "./context";
 import groupBy from "lodash.groupby";
-import { JiraIssue, JiraIssueStatus, JiraIssueStatusList } from "./type";
+import { JiraIssue, JiraIssueStatus } from "./type";
 import JiraIssueList from "./jira-issue-list";
+import { jiraIssueStatusList } from "./data";
 
 
 const JiraBoard = () => {
@@ -15,7 +16,7 @@ const JiraBoard = () => {
 
     return (
         <div className=" w-full flex items-center justify-around">
-            {JiraIssueStatusList.map((status) =>  <JiraIssueList
+            {jiraIssueStatusList.map((status) =>  <JiraIssueList
                 key={status}
                 status={status}
                 issues={issuesByStatus[status]}

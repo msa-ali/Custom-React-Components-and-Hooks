@@ -1,6 +1,9 @@
 import _keyBy from 'lodash.keyby';
 
 import { Props as JiraIssue } from './jira-card';
+import { JiraIssueStatus } from './type';
+
+export const jiraIssueStatusList: JiraIssueStatus[] = ["TODO", "IN PROGRESS", "IN REVIEW", "DONE"]
 
 const data: JiraIssue[] = [
     {
