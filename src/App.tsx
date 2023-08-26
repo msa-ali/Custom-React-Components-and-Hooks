@@ -7,6 +7,7 @@ import ModalPage from "./pages/modalPage";
 import TablePage from './pages/tablePage';
 import CounterPage from './pages/counterPage';
 import DragAndDropPage from './pages/dragAndDropPage';
+import TicTacToePage from './pages/ticTacToePage';
 function App() {
   return (
     <div className="container mx-auto grid grid-cols-6 gap-4 mt-4">
@@ -32,6 +33,9 @@ function App() {
         </Route>
         <Route path='/drag-and-drop'>
           <DragAndDropPage />
+        </Route>
+        <Route path='/tic-tac-toe'>
+          <TicTacToePage />
         </Route>
       </div>
     </div>
