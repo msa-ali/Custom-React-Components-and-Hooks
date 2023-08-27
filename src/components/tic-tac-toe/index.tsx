@@ -1,4 +1,4 @@
-import { useReducer, useState, memo, useCallback, useEffect } from "react";
+import { memo, useEffect, ReactNode } from "react";
 import classNames from "classnames";
 import React from "react";
 import useTicTacToe, { Player } from "./useTicTacToe";
@@ -69,9 +69,18 @@ function TicTacToe() {
         />
     ))).flat(1);
 
+    let header: ReactNode;
+    if (winner === 'Draw') {
+        header = <div className="mt-2"><span className="font-bold">Result: </span>Draw</div>
+    } else if (winner !== undefined) {
+        header = <div className="mt-2"><span className="font-bold">Winner: </span>{winner}</div>
+    } else {
+        header = <div className="mt-2"><span className="font-bold">Turn: </span>{currentPlayer}</div>
+    }
+
     return (
         <div className="w-full flex flex-col gap-8 justify-center items-center">
-            <div className="mt-2"><span className="font-bold">{winner ? 'Winner: ' : 'Turn: '}</span> {winner ? winner : currentPlayer}</div>
+            {header}
             <div className="grid grid-cols-3">
                 {gridCells}
             </div>

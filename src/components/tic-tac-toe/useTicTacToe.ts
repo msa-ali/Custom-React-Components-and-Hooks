@@ -6,12 +6,12 @@ const getInitialGameState = (): (Player | undefined)[][] => Array(3)
     .fill(0)
     .map(_ => Array(3).fill(0).map(() => undefined))
 
-function getWinner(state: (Player | undefined)[][], currentPlayer: Player): Player | undefined {
+function getWinner(state: (Player | undefined)[][], currentPlayer: Player): Player | 'Draw' | undefined {
     const checkRowValue = state.some(row => row.every(cell => cell === currentPlayer));
     if (checkRowValue) {
         return currentPlayer;
     }
-    for (let i = 0; i< 3; i++) {
+    for (let i = 0; i < 3; i++) {
         const checkColumnValue = state.map(row => row[0]).every(value => value === currentPlayer);
         if (checkColumnValue) {
             return currentPlayer
@@ -33,6 +33,9 @@ function getWinner(state: (Player | undefined)[][], currentPlayer: Player): Play
     ) {
         return currentPlayer;
     }
+    if (state.every(row => row.every(cell => cell !== undefined))) {
+        return 'Draw';
+    }
     return;
 }
 
@@ -40,7 +43,7 @@ const toggleCurrentPlayer = (player: Player) => player === 'player1' ? 'player2'
 
 export const useTicTacToe = () => {
     const [currentPlayer, setCurrentPlayer] = useState<Player>('player1');
-    const [winner, setWinner] = useState<Player | undefined>();
+    const [winner, setWinner] = useState<Player | 'Draw' | undefined>();
 
     const [state, setState] = useState(getInitialGameState);
 
