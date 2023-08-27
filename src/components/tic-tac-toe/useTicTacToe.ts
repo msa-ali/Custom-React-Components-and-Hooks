@@ -36,7 +36,6 @@ function getWinner(state: (Player | undefined)[][], currentPlayer: Player): Play
     if (state.every(row => row.every(cell => cell !== undefined))) {
         return 'Draw';
     }
-    return;
 }
 
 const toggleCurrentPlayer = (player: Player) => player === 'player1' ? 'player2' : 'player1';
