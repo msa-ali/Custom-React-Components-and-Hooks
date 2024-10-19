@@ -8,7 +8,8 @@ const links: { label: string, path: string }[] = [
     { label: 'Table', path: '/table' },
     { label: 'Counter', path: '/counter', },
     { label: 'Drag and Drop', path: '/drag-and-drop', },
-    { label: 'Tic Tac Toe', path: '/tic-tac-toe', }
+    { label: 'Tic Tac Toe', path: '/tic-tac-toe', },
+    { label: 'Interactive Shape', path: '/interactive-shape' }
 ];
 
 const Sidebar = () => {

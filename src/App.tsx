@@ -8,6 +8,8 @@ import TablePage from './pages/tablePage';
 import CounterPage from './pages/counterPage';
 import DragAndDropPage from './pages/dragAndDropPage';
 import TicTacToePage from './pages/ticTacToePage';
+import InteractiveShape from './interview-problems/interactiveShape';
+
 function App() {
   return (
     <div className="container mx-auto grid grid-cols-6 gap-4 mt-4">
@@ -36,6 +38,9 @@ function App() {
         </Route>
         <Route path='/tic-tac-toe'>
           <TicTacToePage />
+        </Route>
+        <Route path='/interactive-shape'>
+          <InteractiveShape />
         </Route>
       </div>
     </div>
