@@ -9,6 +9,7 @@ import CounterPage from './pages/counterPage';
 import DragAndDropPage from './pages/dragAndDropPage';
 import TicTacToePage from './pages/ticTacToePage';
 import InteractiveShape from './interview-problems/interactiveShape';
+import ProgressBar from './interview-problems/progressBar';
 
 function App() {
   return (
@@ -41,6 +42,9 @@ function App() {
         </Route>
         <Route path='/interactive-shape'>
           <InteractiveShape />
+        </Route>
+        <Route path='/progress-bar'>
+          <ProgressBar />
         </Route>
       </div>
     </div>

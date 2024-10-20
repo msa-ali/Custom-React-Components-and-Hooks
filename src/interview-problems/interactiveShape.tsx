@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, memo } from 'react';
+import Question from '../components/question';
 
 // Use this data to create the shape
 const BOX_DATA = [
@@ -127,20 +128,17 @@ export default function InteractiveShape() {
 
     return (
         <main>
-            <p>
-                In this question, the candidate needs to create a shape based on a given 2D array. A shape is a collection of empty boxes placed at values that are true in the provided array.
-                Many users have reported that this question was asked in the frontend coding round of companies like Uber. You might be given a 2D array and needs to create the shape and along with interactivity or shape would be created as part of the initial code.
-            </p>
-            <p className='py-4'>
-                <b>Functional Requirement</b>
-            </p>
-            <ul className='list-disc'>
-                <li>Create an empty box where array value is <code>1</code>.</li>
-                <li>User can select a box. Upon selection the box background color should change to <code>#0bcc59</code>.</li>
-                <li>Once all boxes are selected then the boxes should auto-deselect based on the order of selection.</li>
-                <li>Deselection should be non-interruptible as in once started, we can't stop it.</li>
-                <li>During de-selection, user should not be able to select a new box as in disable any box interaction.</li>
-            </ul>
+            <Question
+                problem="In this question, the candidate needs to create a shape based on a given 2D array. A shape is a collection of empty boxes placed at values that are true in the provided array.
+                Many users have reported that this question was asked in the frontend coding round of companies like Uber. You might be given a 2D array and needs to create the shape and along with interactivity or shape would be created as part of the initial code."
+                requirements={[
+                    <p>Create an empty box where array value is <code>1</code>.</p>,
+                    <p>User can select a box. Upon selection the box background color should change to <code>#0bcc59</code>.</p>,
+                    <p>Once all boxes are selected then the boxes should auto-deselect based on the order of selection.</p>,
+                    'Deselection should be non-interruptible as in once started, we can\'t stop it.',
+                    'During de-selection, user should not be able to select a new box as in disable any box interaction.'
+                ]}
+            />
             <div style={{ ...containerStyle }} onClick={onBoxClick} className='pt-8'>
                 {selected.map((row, i) => {
                     return row.map((isSelected, j) => (
