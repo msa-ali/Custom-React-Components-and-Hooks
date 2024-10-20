@@ -11,6 +11,7 @@ import TicTacToePage from './pages/ticTacToePage';
 import InteractiveShape from './interview-problems/interactiveShape';
 import ProgressBar from './interview-problems/progressBar';
 import ProgressBar2 from './interview-problems/progressBar2';
+import Rating from './interview-problems/starRating';
 
 function App() {
   return (
@@ -49,6 +50,9 @@ function App() {
         </Route>
         <Route path='/progress-bar-2'>
           <ProgressBar2 />
+        </Route>
+        <Route path='/star-rating'>
+          <Rating total={10} selected={6} />
         </Route>
       </div>
     </div>

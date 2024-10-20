@@ -11,7 +11,8 @@ const links: { label: string, path: string }[] = [
     { label: 'Tic Tac Toe', path: '/tic-tac-toe', },
     { label: 'Interactive Shape', path: '/interactive-shape' },
     { label: 'Progress Bar', path: '/progress-bar' }, 
-    { label: 'Progress Bar 2', path: '/progress-bar-2' }
+    { label: 'Progress Bar 2', path: '/progress-bar-2' },
+    { label: 'Star Rating', path: '/star-rating' },
 ];
 
 const Sidebar = () => {
