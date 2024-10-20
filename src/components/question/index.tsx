@@ -11,7 +11,7 @@ const Question = ({ problem, requirements, extraInfo, image }: Props) => {
         <div className="my-4">
             <h2 className="text-xl mb-2 font-semibold">Requirements</h2>
             <ul className="list-disc">
-                {requirements.map(requirement => <li>{requirement}</li>)}
+                {requirements.map((requirement, i) => <li key={i}>{requirement}</li>)}
             </ul>
         </div>
     ) : null;

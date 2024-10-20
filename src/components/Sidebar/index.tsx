@@ -10,7 +10,8 @@ const links: { label: string, path: string }[] = [
     { label: 'Drag and Drop', path: '/drag-and-drop', },
     { label: 'Tic Tac Toe', path: '/tic-tac-toe', },
     { label: 'Interactive Shape', path: '/interactive-shape' },
-    { label: 'Progress Bar', path: '/progress-bar' },
+    { label: 'Progress Bar', path: '/progress-bar' }, 
+    { label: 'Progress Bar 2', path: '/progress-bar-2' }
 ];
 
 const Sidebar = () => {
